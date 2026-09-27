@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sản phẩm</title>
+</head>
+<body>
+    <div th:if="${product != null}">
+        <h1 th:text="${product.name}"></h1>
+        <p>Mã danh mục: <span th:text="${product.categoryId}"></span></p>
+        <p>Mô tả: <span th:text="${product.description}"></span></p>
+        <p>Giá: <span th:text="${product.price}"></span> VND</p>
+        <a th:href="@{/products}">Quay lại</a>
+    </div>
+    <div th:unless="${product != null}">
+        <p>Không tìm thấy sản phẩm!</p>
+    </div>
+</body>
+</html>
